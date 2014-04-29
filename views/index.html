@@ -1,0 +1,81 @@
+<html>
+<head>
+    <title>Тестовое задание в Альфа-Банк</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+
+
+
+</head>
+<body>
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header navbar-right">
+
+            <ul class="nav nav-pills nav-stacked navbar-nav ">
+                <li><a href="/about">Задание</a></li>
+                <li class="active"><a href="/">Визуализация ПАММ</a></li>
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+
+    <div class="page-header">
+        <h3>График подневной доходности ПАММ счетов:</h3>
+    </div>
+
+    <div id="chartdiv" style="width: 100%; height: 400px;"></div>
+
+    <h3>Статистка ПАММ счетов:</h3>
+
+    <div>
+        <table class="table table-striped table-bordered table-condensed">
+            <tr>
+                <th>График</th>
+                <th>Номер счета</th>
+                <th>Название счета</th>
+                <th>Лучший месяц</th>
+                <th>Худший месяц</th>
+                <th>Средняя доходность за месяц</th>
+                <th>Доходность за последний год</th>
+            </tr>
+            {% for pamm in statistics %}
+            <tr>
+                <td><input type="checkbox" class="graph" id="{{pamm.pamm_id}}" {% if  loop.index == 1 %} checked="true" {% endif %}/></td>
+                <td>{{pamm.account_id}}</td>
+                <td>{{pamm.name}}</td>
+                <td>{{pamm.best_month}}</td>
+                <td>{{pamm.worst_month}}</td>
+                <td>{{pamm.avg_monthly_profit}}</td>
+                <td>{{pamm.yearly_profit}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+    </div>
+</div>
+
+<!-- Ajax actual properties checker -->
+<script src="/js/amcharts.js"></script>
+<script src="/js/serial.js"></script>
+<script src="/js/chart.js"></script>
+
+</body>
+
+</html>

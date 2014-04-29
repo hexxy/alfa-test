@@ -1,0 +1,82 @@
+<html>
+<head>
+    <title>Тестовое задание в Альфа-Банк</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+
+
+
+</head>
+<body>
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header navbar-right">
+
+            <ul class="nav nav-pills nav-stacked navbar-nav ">
+                <li class="active"><a href="/about">Задание</a></li>
+                <li><a href="/">Визуализация ПАММ</a></li>
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+
+<div class="container">
+    <div class="starter-template">
+        <div class="page-header">
+            <h2>Визуализация статистики ПАММ-счетов</h2>
+        </div>
+
+        <p class="lead">
+            Нужно сделать визуализацию статистики ПАММ счетов. Миниатюрная таблица с общими показателями. Если отметить галочкой один из счетов - он должен отобразиться на графике.
+            В базе должны быть несколько ПАММ счетов (больше 7) и подневную доходность за период не меньше года. Заполняя базу желательно брать данные, близкие к реальным, чтобы графики выглядели адекватно.
+        </p>
+        <p class="lead">
+            Таблица ПАММ счетов включает колонки:
+        </p>
+        <ul>
+            <li>Первая пустая колонка, в каждой из них выводится checkbox, обозначающий показывать/не показывать счета на графике</li>
+            <li>Название счета</li>
+            <li>Лучший месяц</li>
+            <li>Худший месяц</li>
+            <li>Средняя доходность за месяц</li>
+            <li>Доходность за последний год</li>
+        </ul>
+        <p class="lead">
+            На графиках необходимо уметь изменять временной диапазон.
+            График должен выглядеть презентабельно и быть информативным.
+        </p>
+
+        <div class="page-header">
+            <h2>Особенности реализации</h2>
+        </div>
+
+        <ul>
+            <li>Фреймворк: Silex</li>
+            <li>Вывод графиков: Amcharts</li>
+            <li>CSS: Bootstrap</li>
+            <li>При выводе доходности используются сложные проценты</li>
+            <li>БД состоит из трех таблиц: информация о ПАММ счете (pamm), дневная доходность счетов (pamm_stat), месячная доходность счетов (pamm_stat_monthly)</li>
+            <li>Папка misc содержит структуру БД и скрипты для генерации статистики по счету</li>
+        </ul>
+
+    </div>
+
+</div>
+</div>
+</body>
+
+</html>
